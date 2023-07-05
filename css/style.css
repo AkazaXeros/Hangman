@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --backgroundColor: #666666;
+  --mainScreenColor: #f5f5f5;
+  --mainFont: 'Pacifico', sans-serif, 'cursive';
+  --bodyFrame: #3f2305;
+  --step--2: clamp(1.74rem, calc(1.32rem + 2.09vw), 3.2rem);
+  --step--1: clamp(2.08rem, calc(1.54rem + 2.74vw), 4rem);
+  --step-0: clamp(2.5rem, calc(1.79rem + 3.57vw), 5rem);
+  --step-1: clamp(3rem, calc(2.07rem + 4.64vw), 6.25rem);
+  --step-2: clamp(3.6rem, calc(2.4rem + 6.02vw), 7.81rem);
+  --step-3: clamp(4.32rem, calc(2.76rem + 7.78vw), 9.77rem);
+  --step-4: clamp(5.18rem, calc(3.18rem + 10.03vw), 12.21rem);
+  --step-5: clamp(6.22rem, calc(3.64rem + 12.91vw), 15.26rem);
+}
+
+body {
+  width: min(90vw, 1440px);
+  min-height: 100svh;
+  margin-inline: auto;
+  background-image: url(/img/green-dirty-blackboard.jpg);
+  background-position: center;
+  background-size: cover;
+  color: var(--mainScreenColor);
+  font-family: var(--mainFont);
+}
+
+main {
+  /* buscar como hacer que un contenedor herede las dimensiones del padre */
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+h1 {
+  font-size: var(--step-0);
+}
+
+/* rayitas palabra oculta */
+section#secretWord {
+  font-size: 2.3rem;
+  letter-spacing: 0.5rem;
+}
+
+/* Keyboard */
+
+section#lettersBtn {
+  width: 80%;
+  height: clamp(13rem, 20vh + 1rem, 31.25rem);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  gap: 0.5rem;
+}
+
+section#lettersBtn #button26 {
+  grid-area: 5 / -4 / 6 / -3;
+}
+
+section#lettersBtn #button25 {
+  grid-area: 5 / -5 / 6 / -4;
+}
+
+button.letter {
+  width: clamp(35px, 5vw, 50px);
+  height: clamp(35px, 4.5vh, 50px);
+  border: 2px var(--mainScreenColor) solid;
+  border-radius: 6px;
+  font-family: var(--mainFont);
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: transparent;
+  color: var(--mainScreenColor);
+}
+
+button.letter:disabled {
+  border: none;
+  color: transparent;
+}
